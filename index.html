@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Bitz Handyman & HVAC Services | Friendswood, TX</title>
+    <meta name="description" content="Contact Little Bitz Handyman & HVAC Services in Friendswood, Texas, for premium HVAC repair, cooling maintenance, and local handyman service inquiries.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#16364A',
+                        deepBlueDark: '#0e2330',
+                        warmWhite: '#F7F8F5',
+                        turquoise: '#35B9C7',
+                        turquoiseHover: '#2aa5b2',
+                        amberAccent: '#F2B84B',
+                        steelGray: '#586A76',
+                        softGray: '#EBF0F2'
+                    },
+                    fontFamily: {
+                        heading: ['Barlow', 'sans-serif'],
+                        sans: ['DM Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow-turquoise': '0 0 25px rgba(53, 185, 199, 0.35)',
+                        'glow-amber': '0 0 25px rgba(242, 184, 75, 0.35)',
+                        'glass': '0 8px 32px 0 rgba(16, 38, 54, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Barlow & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #F7F8F5;
+            color: #16364A;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Barlow', sans-serif;
+        }
+        .shield-shape {
+            clip-path: polygon(50% 0%, 100% 15%, 100% 70%, 50% 100%, 0% 70%, 0% 15%);
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(53, 185, 199, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(88, 106, 118, 0.15);
+        }
+        .glass-card-dark {
+            background: rgba(22, 54, 74, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(53, 185, 199, 0.2);
+        }
+        /* Reveal animations */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Pulse wave animation for airflow widget */
+        @keyframes flowLine {
+            0% { stroke-dashoffset: 100; }
+            100% { stroke-dashoffset: 0; }
+        }
+        .animate-flow {
+            stroke-dasharray: 10, 10;
+            animation: flowLine 2s linear infinite;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #16364A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #35B9C7;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2aa5b2;
+        }
+    </style>
+</head>
+<body class="bg-warmWhite text-deepBlue antialiased selection:bg-turquoise selection:text-white">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-warmWhite/90 backdrop-blur-md border-b border-steelGray/10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo with Shield Shape -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="relative">
+                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/jj54/refs/heads/main/f33551e8-afd8-4bf3-bba4-d3c8512126e4.jpg" 
+                         alt="Little Bitz Logo" 
+                         class="w-12 h-12 shield-shape object-cover shadow-lg border-2 border-turquoise group-hover:scale-105 transition-transform bg-deepBlue" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/100x100/16364A/35B9C7?text=LB';">
+                    <span class="absolute -bottom-1 -right-1 flex h-3.5 w-3.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-turquoise opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-turquoise"></span>
+                    </span>
+                </div>
+                <div>
+                    <span class="font-heading font-extrabold text-xl tracking-tight block text-deepBlue group-hover:text-turquoise transition-colors leading-none">Little Bitz</span>
+                    <span class="text-[11px] uppercase tracking-widest text-steelGray font-bold block mt-1">Handyman & HVAC</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-7 font-bold text-sm tracking-wide">
+                <a href="#home" class="text-deepBlue hover:text-turquoise transition-colors">Home</a>
+                <a href="#about" class="text-deepBlue hover:text-turquoise transition-colors">About Us</a>
+                <a href="#hvac" class="text-deepBlue hover:text-turquoise transition-colors">HVAC Services</a>
+                <a href="#handyman" class="text-deepBlue hover:text-turquoise transition-colors">Handyman</a>
+                <a href="#calculator" class="text-deepBlue hover:text-turquoise transition-colors">Estimator</a>
+                <a href="#process" class="text-deepBlue hover:text-turquoise transition-colors">Process</a>
+                <a href="#faq" class="text-deepBlue hover:text-turquoise transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Action Callout Buttons -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="tel:+18325649368" class="flex items-center gap-2 text-deepBlue font-extrabold hover:text-turquoise transition-all bg-steelGray/10 hover:bg-steelGray/20 px-4 py-2.5 rounded-xl border border-steelGray/20">
+                    <i class="fa-solid fa-phone-volume text-turquoise animate-pulse"></i>
+                    <span>(832) 564-9368</span>
+                </a>
+                <a href="#contact" class="bg-turquoise text-deepBlue font-extrabold px-5 py-2.5 rounded-xl shadow-md hover:bg-turquoiseHover hover:shadow-glow-turquoise transition-all transform hover:-translate-y-0.5">
+                    Request Service
+                </a>
+            </div>
+
+            <!-- Mobile Drawer Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-deepBlue p-2 rounded-xl bg-steelGray/10 hover:bg-steelGray/20 focus:outline-none" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-warmWhite border-b border-steelGray/10 px-6 pt-3 pb-8 space-y-4 transition-all">
+            <a href="#home" class="mobile-link block py-2 text-lg font-bold text-deepBlue hover:text-turquoise border-b border-steelGray/10">Home</a>
+            <a href="#about" class="mobile-link block py-2 text-lg font-bold text-deepBlue hover:text-turquoise border-b border-steelGray/10">About Us</a>
+            <a href="#hvac" class="mobile-link block py-2 text-lg font-bold text-deepBlue hover:text-turquoise border-b border-steelGray/10">HVAC Services</a>
+            <a href="#handyman" class="mobile-link block py-2 text-lg font-bold text-deepBlue hover:text-turquoise border-b border-steelGray/10">Handyman</a>
+            <a href="#calculator" class="mobile-link block py-2 text-lg font-bold text-deepBlue hover:text-turquoise border-b border-steelGray/10">Cost Estimator</a>
+            <a href="#process" class="mobile-link block py-2 text-lg font-bold text-deepBlue hover:text-turquoise border-b border-steelGray/10">How It Works</a>
+            <a href="#faq" class="mobile-link block py-2 text-lg font-bold text-deepBlue hover:text-turquoise">FAQ</a>
+            <div class="pt-4 flex flex-col gap-3">
+                <a href="tel:+18325649368" class="flex items-center justify-center gap-2 text-deepBlue font-bold bg-steelGray/10 py-3.5 rounded-xl border border-steelGray/20">
+                    <i class="fa-solid fa-phone text-turquoise"></i>
+                    <span>Call (832) 564-9368</span>
+                </a>
+                <a href="#contact" class="mobile-link flex items-center justify-center bg-turquoise text-deepBlue font-extrabold py-3.5 rounded-xl shadow-md">
+                    Request Service Online
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen pt-32 pb-24 md:pt-40 md:pb-32 flex items-center bg-deepBlue text-warmWhite overflow-hidden">
+        <!-- Hero Background Image with Shading Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1920&q=80" 
+                 alt="HVAC technician servicing outdoor AC unit" 
+                 class="w-full h-full object-cover object-center filter brightness-90" 
+                 onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/16364A/35B9C7?text=Little+Bitz+HVAC+Services';">
+            <div class="absolute inset-0 bg-gradient-to-r from-deepBlueDark via-deepBlue/95 to-deepBlue/60"></div>
+            <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Column -->
+                <div class="lg:col-span-7">
+                    <!-- Understated Location Tag -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-turquoise/20 text-turquoise font-bold text-xs uppercase tracking-widest mb-6 border border-turquoise/40 shadow-inner">
+                        <i class="fa-solid fa-location-dot text-amberAccent"></i>
+                        <span>HANDYMAN + HVAC SERVICES · FRIENDSWOOD, TX</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="font-heading font-extrabold text-4xl sm:text-6xl lg:text-6xl text-warmWhite tracking-tight leading-[1.08] mb-6">
+                        Comfort Fixed. <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-turquoise via-amberAccent to-turquoise">Home Repairs Handled.</span>
+                    </h1>
+
+                    <!-- Supporting Text -->
+                    <p class="text-lg sm:text-xl text-warmWhite/90 mb-8 font-normal leading-relaxed max-w-2xl">
+                        Dependable HVAC climate solutions and skilled residential handyman repairs from Little Bitz Handyman & HVAC Services in Friendswood, Texas.
+                    </p>
+
+                    <!-- Interactive Hero CTAs -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+                        <a href="tel:+18325649368" class="inline-flex items-center justify-center gap-3 bg-turquoise hover:bg-turquoiseHover text-deepBlue font-extrabold px-8 py-4 rounded-xl shadow-glow-turquoise transition-all text-lg transform hover:-translate-y-1">
+                            <i class="fa-solid fa-phone-flip text-xl"></i>
+                            <span>Call Now: (832) 564-9368</span>
+                        </a>
+                        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-warmWhite/10 hover:bg-warmWhite/20 text-warmWhite border border-warmWhite/30 font-bold px-8 py-4 rounded-xl transition-all text-lg backdrop-blur-sm transform hover:-translate-y-1">
+                            <span>Request Service</span>
+                            <i class="fa-solid fa-chevron-down text-turquoise"></i>
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="grid grid-cols-3 gap-4 border-t border-warmWhite/15 pt-6 text-warmWhite/80 text-xs sm:text-sm font-semibold">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-turquoise"></i>
+                            <span>Friendswood Local</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-turquoise"></i>
+                            <span>Verified Quality</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-turquoise"></i>
+                            <span>HVAC & Repairs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Hero Graphic Box (Airflow simulation) -->
+                <div class="lg:col-span-5 hidden lg:block">
+                    <div class="glass-card-dark p-6 rounded-3xl shadow-2xl relative overflow-hidden">
+                        <div class="flex items-center justify-between mb-4 border-b border-turquoise/20 pb-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-turquoise">Interactive Cooling System Monitor</span>
+                            <span class="inline-flex items-center gap-1.5 text-xs text-amberAccent font-bold">
+                                <span class="w-2 h-2 rounded-full bg-amberAccent animate-ping"></span> Active Diagnoser
+                            </span>
+                        </div>
+
+                        <!-- SVG HVAC Airflow Animation Canvas -->
+                        <div class="relative bg-deepBlueDark/80 rounded-2xl p-6 border border-turquoise/20 text-center">
+                            <svg class="w-full h-32 mx-auto" viewBox="0 0 300 100" fill="none">
+                                <path d="M 20 50 Q 80 10, 150 50 T 280 50" stroke="#586A76" stroke-width="4" stroke-dasharray="6 6"/>
+                                <path d="M 20 50 Q 80 10, 150 50 T 280 50" stroke="#35B9C7" stroke-width="4" class="animate-flow"/>
+                                <path d="M 20 70 Q 80 30, 150 70 T 280 70" stroke="#F2B84B" stroke-width="2" class="animate-flow" style="animation-duration: 3s;"/>
+                                <circle cx="150" cy="50" r="12" fill="#35B9C7" class="animate-pulse"/>
+                                <text x="150" y="54" text-anchor="middle" fill="#16364A" font-size="10" font-weight="bold">HVAC</text>
+                            </svg>
+                            <p class="text-xs text-warmWhite/70 mt-2">Precision climate optimization and diagnostic control for Gulf Coast heat.</p>
+                        </div>
+
+                        <div class="mt-4 grid grid-cols-2 gap-3 text-center">
+                            <div class="bg-warmWhite/5 p-3 rounded-xl border border-warmWhite/10">
+                                <span class="text-xs text-steelGray block">Service Address</span>
+                                <span class="text-xs font-bold text-warmWhite block truncate">15810 Wandering Trail</span>
+                            </div>
+                            <div class="bg-warmWhite/5 p-3 rounded-xl border border-warmWhite/10">
+                                <span class="text-xs text-steelGray block">Service Region</span>
+                                <span class="text-xs font-bold text-turquoise block">Friendswood, TX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Introduction / Split Section -->
+    <section id="about" class="py-20 md:py-28 bg-warmWhite relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Image Column -->
+                <div class="lg:col-span-6 reveal-on-scroll">
+                    <div class="relative">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Tradesperson performing maintenance" 
+                                 class="w-full h-[420px] sm:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/1000x800/586A76/F7F8F5?text=Little+Bitz+Maintenance';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-deepBlue/60 via-transparent to-transparent"></div>
+                        </div>
+
+                        <!-- Floating Stat Badge -->
+                        <div class="absolute -bottom-6 -right-2 sm:-right-6 bg-deepBlue text-warmWhite p-6 rounded-2xl shadow-2xl border border-turquoise/30 max-w-xs">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-10 h-10 rounded-xl bg-turquoise/20 flex items-center justify-center text-turquoise font-extrabold text-xl">
+                                    <i class="fa-solid fa-house-chimney-crack"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-bold text-base text-warmWhite">Local Excellence</h4>
+                                    <span class="text-xs text-turquoise">Friendswood, TX</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-warmWhite/80 leading-relaxed">Dedicated to prompt service, dependable workmanship, and long-term home comfort.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copy Column -->
+                <div class="lg:col-span-6 reveal-on-scroll">
+                    <span class="text-turquoise font-extrabold uppercase tracking-widest text-xs block mb-3">Focused Home Solutions</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-deepBlue tracking-tight mb-6 leading-tight">
+                        Practical Help for Your Home & HVAC Needs in Friendswood
+                    </h2>
+                    <p class="text-steelGray text-base sm:text-lg mb-6 leading-relaxed">
+                        At Little Bitz Handyman & HVAC Services, we understand that maintaining a comfortable home requires both reliable climate control and attentive everyday property upkeep. Located right here on Wandering Trail in Friendswood, Texas, we provide focused solutions tailored to local homeowners.
+                    </p>
+                    <p class="text-steelGray text-base sm:text-lg mb-8 leading-relaxed">
+                        Whether you are dealing with an air-conditioning malfunction during a warm Texas afternoon or need a skilled hand to tackle minor household repairs, our team is dedicated to getting the job done right with clear communication and quality care.
+                    </p>
+
+                    <!-- Feature Box Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-steelGray/15 hover:border-turquoise transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-turquoise/15 text-turquoise flex items-center justify-center mb-3 text-lg font-bold">
+                                <i class="fa-solid fa-snowflake"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-deepBlue text-lg mb-1">HVAC Specialists</h3>
+                            <p class="text-xs text-steelGray leading-normal">AC repair, troubleshooting, tune-ups & seasonal maintenance.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-steelGray/15 hover:border-amberAccent transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-amberAccent/15 text-amberAccent flex items-center justify-center mb-3 text-lg font-bold">
+                                <i class="fa-solid fa-wrench"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-deepBlue text-lg mb-1">Handyman Repairs</h3>
+                            <p class="text-xs text-steelGray leading-normal">General repairs, fixture updates, and practical upkeep tasks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HVAC Services Section (Features Screenshots Provided by User) -->
+    <section id="hvac" class="py-20 md:py-28 bg-deepBlue text-warmWhite relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="max-w-3xl mb-16 reveal-on-scroll">
+                <span class="text-turquoise font-extrabold uppercase tracking-widest text-xs block mb-3">Climate Control Specialists</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-warmWhite tracking-tight mb-6">
+                    Keep Your Home Comfortable.
+                </h2>
+                <p class="text-warmWhite/80 text-lg leading-relaxed">
+                    Reliable air-conditioning repair, servicing, and cooling maintenance designed to handle the demanding Texas climate. We keep your systems running smoothly.
+                </p>
+            </div>
+
+            <!-- Cards Grid using Provided Screenshots -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- HVAC Box 1: Troubleshooting & Repair -->
+                <div class="glass-card-dark rounded-3xl overflow-hidden flex flex-col group hover:border-turquoise transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/jj54/refs/heads/main/Screenshot%202026-10-12%20232043.png" 
+                             alt="AC troubleshooting and repair screenshot" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/16364A/35B9C7?text=AC+Repair';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlue via-deepBlue/30 to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-turquoise text-deepBlue text-xs font-extrabold px-3 py-1 rounded-full uppercase shadow">Diagnostic</span>
+                    </div>
+                    <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-2xl text-warmWhite mb-3 group-hover:text-turquoise transition-colors">AC Troubleshooting & Repair</h3>
+                            <p class="text-warmWhite/70 text-sm leading-relaxed mb-6">
+                                Quick diagnostic work and repair for air conditioning units blowing warm air, making unusual noises, or struggling during hot summer spells.
+                            </p>
+                        </div>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-turquoise font-bold text-sm hover:translate-x-1 transition-transform">
+                            <span>Request AC Repair</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- HVAC Box 2: Maintenance & Tune-Ups -->
+                <div class="glass-card-dark rounded-3xl overflow-hidden flex flex-col group hover:border-turquoise transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll" style="transition-delay: 150ms;">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/jj54/refs/heads/main/Screenshot%202026-10-12%20232143.png" 
+                             alt="Indoor air conditioning maintenance screenshot" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/16364A/35B9C7?text=HVAC+Maintenance';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlue via-deepBlue/30 to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-turquoise text-deepBlue text-xs font-extrabold px-3 py-1 rounded-full uppercase shadow">Tune-Up</span>
+                    </div>
+                    <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-2xl text-warmWhite mb-3 group-hover:text-turquoise transition-colors">HVAC Maintenance & Tune-Ups</h3>
+                            <p class="text-warmWhite/70 text-sm leading-relaxed mb-6">
+                                Seasonal check-ups to inspect coils, verify refrigerant levels, check electrical connections, and optimize overall energy efficiency.
+                            </p>
+                        </div>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-turquoise font-bold text-sm hover:translate-x-1 transition-transform">
+                            <span>Schedule Maintenance</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- HVAC Box 3: Installation & Replacement -->
+                <div class="glass-card-dark rounded-3xl overflow-hidden flex flex-col group hover:border-turquoise transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll" style="transition-delay: 300ms;">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/jj54/refs/heads/main/Screenshot%202026-10-12%20232227.png" 
+                             alt="Cooling system replacement screenshot" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/16364A/35B9C7?text=AC+Installation';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlue via-deepBlue/30 to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-amberAccent text-deepBlue text-xs font-extrabold px-3 py-1 rounded-full uppercase shadow">Upgrades</span>
+                    </div>
+                    <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-2xl text-warmWhite mb-3 group-hover:text-turquoise transition-colors">Installation & Replacement</h3>
+                            <p class="text-warmWhite/70 text-sm leading-relaxed mb-6">
+                                Professional assistance for replacing outdated cooling units, air handlers, and thermostats to keep your Friendswood home cool.
+                            </p>
+                        </div>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-turquoise font-bold text-sm hover:translate-x-1 transition-transform">
+                            <span>Discuss Replacement</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Handyman Services Section -->
+    <section id="handyman" class="py-20 md:py-28 bg-warmWhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16 reveal-on-scroll">
+                <span class="text-amberAccent font-extrabold uppercase tracking-widest text-xs block mb-3">Practical Skilled Help</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-deepBlue tracking-tight mb-6">
+                    Small Repairs. Practical Solutions.
+                </h2>
+                <p class="text-steelGray text-lg leading-relaxed">
+                    General home repair and handyman assistance to tackle your household to-do list. From fixture adjustments to minor property maintenance, we help keep your home in top shape.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Image Box -->
+                <div class="lg:col-span-5 reveal-on-scroll">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-steelGray/20 relative h-[420px] group">
+                        <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Skilled tradesperson completing handyman repairs" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/1000x800/16364A/F2B84B?text=Handyman+Repairs';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlueDark/80 via-transparent to-transparent flex items-end p-8">
+                            <div>
+                                <span class="bg-amberAccent text-deepBlue font-extrabold text-xs uppercase px-3 py-1 rounded-md mb-2 inline-block">Hands-On Care</span>
+                                <h3 class="text-white font-heading font-bold text-2xl">Quality Household Assistance</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion/List Column -->
+                <div class="lg:col-span-7 reveal-on-scroll">
+                    <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-sm border border-steelGray/15">
+                        <h3 class="font-heading font-bold text-2xl text-deepBlue mb-6 flex items-center gap-3">
+                            <i class="fa-solid fa-screwdriver-wrench text-amberAccent"></i>
+                            <span>Confirmed Handyman Offerings</span>
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <!-- Offering Item 1 -->
+                            <div class="p-4 rounded-2xl bg-warmWhite/80 border border-steelGray/10 hover:border-turquoise transition-all">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-8 h-8 rounded-xl bg-turquoise/20 text-turquoise flex items-center justify-center shrink-0 font-bold mt-1">
+                                        <i class="fa-solid fa-check text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-deepBlue font-bold text-lg">General Household Repairs</h4>
+                                        <p class="text-sm text-steelGray mt-1">Addressing structural wear, interior hardware adjustments, trim touch-ups, and everyday household fixes.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Offering Item 2 -->
+                            <div class="p-4 rounded-2xl bg-warmWhite/80 border border-steelGray/10 hover:border-turquoise transition-all">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-8 h-8 rounded-xl bg-turquoise/20 text-turquoise flex items-center justify-center shrink-0 font-bold mt-1">
+                                        <i class="fa-solid fa-check text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-deepBlue font-bold text-lg">Fixture & Hardware Updates</h4>
+                                        <p class="text-sm text-steelGray mt-1">Swapping lighting fixtures, replacing ceiling fans, cabinet hardware, and door fittings.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Offering Item 3 -->
+                            <div class="p-4 rounded-2xl bg-warmWhite/80 border border-steelGray/10 hover:border-turquoise transition-all">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-8 h-8 rounded-xl bg-turquoise/20 text-turquoise flex items-center justify-center shrink-0 font-bold mt-1">
+                                        <i class="fa-solid fa-check text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-deepBlue font-bold text-lg">Routine Property Upkeep</h4>
+                                        <p class="text-sm text-steelGray mt-1">Preventative home care tasks designed to preserve your property value and fix small issues early.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <a href="#contact" class="inline-flex items-center justify-center w-full bg-deepBlue text-warmWhite hover:bg-turquoise hover:text-deepBlue font-extrabold py-4 px-6 rounded-xl transition-all shadow-md">
+                                <span>Book Handyman Service</span>
+                                <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Service Cost Estimator -->
+    <section id="calculator" class="py-20 bg-deepBlue text-warmWhite relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal-on-scroll">
+                <span class="text-turquoise font-extrabold uppercase tracking-widest text-xs block mb-3">Instant Estimate Tool</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-warmWhite tracking-tight mb-4">
+                    Interactive Service Estimator
+                </h2>
+                <p class="text-warmWhite/70 text-sm sm:text-base">Select your service parameters below to get a ballpark estimate for your Friendswood home project.</p>
+            </div>
+
+            <div class="glass-card-dark p-6 sm:p-10 rounded-3xl border border-turquoise/20 shadow-2xl reveal-on-scroll">
+                <div class="space-y-6">
+                    <!-- Service Type Selection -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-turquoise mb-3">1. Select Service Category</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="calcTypeGroup">
+                            <button type="button" data-type="hvac" class="calc-type-btn bg-turquoise text-deepBlue font-bold p-4 rounded-2xl border border-turquoise flex items-center justify-between text-left transition-all">
+                                <span>HVAC / AC Repair & Maintenance</span>
+                                <i class="fa-solid fa-snowflake"></i>
+                            </button>
+                            <button type="button" data-type="handyman" class="calc-type-btn bg-warmWhite/10 text-warmWhite font-bold p-4 rounded-2xl border border-warmWhite/20 flex items-center justify-between text-left hover:bg-warmWhite/20 transition-all">
+                                <span>Handyman / Household Repair</span>
+                                <i class="fa-solid fa-hammer"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Scope / Complexity Slider -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-turquoise">2. Job Scope / Time Requirement</label>
+                            <span id="scopeValueLabel" class="text-xs font-bold text-amberAccent">Standard Repair (~1-2 Hours)</span>
+                        </div>
+                        <input type="range" id="scopeRange" min="1" max="3" value="1" class="w-full h-2 bg-steelGray/40 rounded-lg appearance-none cursor-pointer accent-turquoise">
+                    </div>
+
+                    <!-- Calculated Result -->
+                    <div class="p-6 rounded-2xl bg-deepBlueDark/90 border border-turquoise/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs text-warmWhite/60 uppercase tracking-wider block font-semibold">Estimated Range</span>
+                            <span id="estimatedPrice" class="font-heading font-extrabold text-3xl sm:text-4xl text-turquoise">$95 - $185</span>
+                            <span class="text-[11px] text-warmWhite/50 block mt-1">*Final quote confirmed on-site after diagnosis.</span>
+                        </div>
+                        <a href="#contact" class="bg-amberAccent text-deepBlue font-extrabold px-6 py-3.5 rounded-xl hover:bg-amberAccent/90 transition-colors shrink-0">
+                            Book This Job
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Owner & Local Commitment Section -->
+    <section class="py-20 bg-warmWhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-steelGray/15 reveal-on-scroll">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-4 text-center lg:text-left">
+                        <div class="relative inline-block">
+                            <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl overflow-hidden shadow-lg border-4 border-turquoise mx-auto">
+                                <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/jj54/refs/heads/main/f33551e8-afd8-4bf3-bba4-d3c8512126e4.jpg" 
+                                     alt="Little Bitz Team Logo Badge" 
+                                     class="w-full h-full object-cover shield-shape bg-deepBlue"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/200x200/16364A/35B9C7?text=Little+Bitz';">
+                            </div>
+                            <span class="absolute -bottom-2 right-2 bg-amberAccent text-deepBlue p-2 rounded-xl text-xs font-bold shadow">
+                                <i class="fa-solid fa-shield-heart"></i>
+                            </span>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-deepBlue mt-4">Little Bitz Services</h3>
+                        <p class="text-xs text-turquoise font-bold uppercase tracking-wider">Friendswood Local Operation</p>
+                    </div>
+
+                    <div class="lg:col-span-8">
+                        <h3 class="font-heading font-bold text-2xl sm:text-3xl text-deepBlue mb-4">
+                            Locally Rooted Service You Can Count On
+                        </h3>
+                        <p class="text-steelGray text-base leading-relaxed mb-4">
+                            Operating from Wandering Trail right here in Friendswood, Little Bitz Handyman & HVAC Services is dedicated to supporting local homeowners. We believe in practical repair solutions, transparent pricing, and treating every home as if it were our own.
+                        </p>
+                        <p class="text-steelGray text-base leading-relaxed">
+                            When you reach out to us, you speak directly with local professionals who take pride in quick diagnostic turnarounds for AC units and solid workmanship on everyday handyman projects.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process Section -->
+    <section id="process" class="py-20 bg-steelGray/5 border-y border-steelGray/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal-on-scroll">
+                <span class="text-turquoise font-extrabold uppercase tracking-widest text-xs block mb-3">Simple & Transparent</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-deepBlue tracking-tight mb-4">
+                    How Working With Us Works
+                </h2>
+                <p class="text-steelGray text-base">Getting your home repairs and HVAC issues handled is quick and straightforward.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Step 01 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-steelGray/15 relative group hover:border-turquoise transition-all reveal-on-scroll">
+                    <span class="font-heading font-extrabold text-5xl text-turquoise/20 group-hover:text-turquoise transition-colors block mb-4">01</span>
+                    <h3 class="font-heading font-bold text-xl text-deepBlue mb-3">Get in Touch</h3>
+                    <p class="text-steelGray text-sm leading-relaxed">
+                        Call our Friendswood office at (832) 564-9368 or submit a service request through our online form with your project details.
+                    </p>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-steelGray/15 relative group hover:border-turquoise transition-all reveal-on-scroll" style="transition-delay: 150ms;">
+                    <span class="font-heading font-extrabold text-5xl text-turquoise/20 group-hover:text-turquoise transition-colors block mb-4">02</span>
+                    <h3 class="font-heading font-bold text-xl text-deepBlue mb-3">Explain the Job</h3>
+                    <p class="text-steelGray text-sm leading-relaxed">
+                        Describe the AC malfunction or household fix needed so we can prepare the proper tools and diagnostic equipment.
+                    </p>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-steelGray/15 relative group hover:border-turquoise transition-all reveal-on-scroll" style="transition-delay: 300ms;">
+                    <span class="font-heading font-extrabold text-5xl text-turquoise/20 group-hover:text-turquoise transition-colors block mb-4">03</span>
+                    <h3 class="font-heading font-bold text-xl text-deepBlue mb-3">Discuss Next Steps</h3>
+                    <p class="text-steelGray text-sm leading-relaxed">
+                        Confirm availability, service details, and work estimate prior to starting any HVAC or handyman work.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 md:py-28 bg-warmWhite">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <span class="text-turquoise font-extrabold uppercase tracking-widest text-xs block mb-3">Common Questions</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-deepBlue tracking-tight mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-steelGray text-base">Clear, factual answers regarding our services in Friendswood, TX.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl border border-steelGray/15 overflow-hidden shadow-sm reveal-on-scroll">
+                    <button class="faq-toggle w-full px-6 py-5 text-left font-heading font-bold text-lg text-deepBlue flex justify-between items-center focus:outline-none hover:text-turquoise transition-colors">
+                        <span>What specific areas do you service?</span>
+                        <i class="fa-solid fa-chevron-down text-turquoise transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-steelGray text-sm leading-relaxed border-t border-steelGray/5 pt-3">
+                        We are proudly based in Friendswood, Texas (15810 Wandering Trail) and provide HVAC and handyman services to homeowners throughout Friendswood and neighboring communities.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl border border-steelGray/15 overflow-hidden shadow-sm reveal-on-scroll">
+                    <button class="faq-toggle w-full px-6 py-5 text-left font-heading font-bold text-lg text-deepBlue flex justify-between items-center focus:outline-none hover:text-turquoise transition-colors">
+                        <span>How do I schedule an HVAC or handyman visit?</span>
+                        <i class="fa-solid fa-chevron-down text-turquoise transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-steelGray text-sm leading-relaxed border-t border-steelGray/5 pt-3">
+                        You can reach us directly by calling (832) 564-9368 or by filling out our online service request form on this site.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl border border-steelGray/15 overflow-hidden shadow-sm reveal-on-scroll">
+                    <button class="faq-toggle w-full px-6 py-5 text-left font-heading font-bold text-lg text-deepBlue flex justify-between items-center focus:outline-none hover:text-turquoise transition-colors">
+                        <span>What handyman repairs are covered?</span>
+                        <i class="fa-solid fa-chevron-down text-turquoise transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-steelGray text-sm leading-relaxed border-t border-steelGray/5 pt-3">
+                        We handle general household repairs, hardware/fixture replacements (such as fans and light fixtures), and basic property upkeep.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-2xl border border-steelGray/15 overflow-hidden shadow-sm reveal-on-scroll">
+                    <button class="faq-toggle w-full px-6 py-5 text-left font-heading font-bold text-lg text-deepBlue flex justify-between items-center focus:outline-none hover:text-turquoise transition-colors">
+                        <span>How are quotes determined?</span>
+                        <i class="fa-solid fa-chevron-down text-turquoise transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-steelGray text-sm leading-relaxed border-t border-steelGray/5 pt-3">
+                        We review the job description, perform an initial diagnostic or review on-site, and confirm all work costs upfront before proceeding.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Service Request Section -->
+    <section id="contact" class="py-20 md:py-28 bg-deepBlue text-warmWhite relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5 reveal-on-scroll">
+                    <span class="text-turquoise font-extrabold uppercase tracking-widest text-xs block mb-3">Direct Contact</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-warmWhite tracking-tight mb-6">
+                        Need Help With Your Home or HVAC?
+                    </h2>
+                    <p class="text-warmWhite/80 text-base sm:text-lg mb-8 leading-relaxed">
+                        Reach out to Little Bitz Handyman & HVAC Services today. Whether your AC needs immediate repair or you have home fixes waiting, we are ready to assist.
+                    </p>
+
+                    <!-- Contact Details -->
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-turquoise/20 text-turquoise flex items-center justify-center shrink-0 text-xl font-bold border border-turquoise/30">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-warmWhite/60 uppercase tracking-wider block font-semibold">Call Us Direct</span>
+                                <a href="tel:+18325649368" class="font-heading font-bold text-2xl text-warmWhite hover:text-turquoise transition-colors">(832) 564-9368</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-turquoise/20 text-turquoise flex items-center justify-center shrink-0 text-xl font-bold border border-turquoise/30">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-warmWhite/60 uppercase tracking-wider block font-semibold">Location & Directions</span>
+                                <p class="font-medium text-warmWhite text-base">15810 Wandering Trail, Friendswood, TX 77546</p>
+                                <a href="https://www.google.com/maps/place/Little+Bitz+Handyman+%26+HVAC+Services/@29.5370855,-95.1870258,17z/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-turquoise text-sm font-bold mt-2 hover:underline">
+                                    <span>View on Google Maps</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="lg:col-span-7 bg-warmWhite text-deepBlue p-8 sm:p-10 rounded-3xl shadow-2xl reveal-on-scroll border border-steelGray/20">
+                    <h3 class="font-heading font-bold text-2xl mb-1">Request Service</h3>
+                    <p class="text-steelGray text-sm mb-6">Fill out the form below and we will get back to you promptly.</p>
+
+                    <form id="serviceForm" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-xs font-bold uppercase tracking-wider text-steelGray mb-1">Your Name *</label>
+                            <input type="text" id="name" required class="w-full bg-steelGray/5 border border-steelGray/20 rounded-xl px-4 py-3 text-deepBlue focus:outline-none focus:border-turquoise transition-colors" placeholder="Full name">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-steelGray mb-1">Phone Number *</label>
+                                <input type="tel" id="phone" required class="w-full bg-steelGray/5 border border-steelGray/20 rounded-xl px-4 py-3 text-deepBlue focus:outline-none focus:border-turquoise transition-colors" placeholder="(832) 000-0000">
+                            </div>
+                            <div>
+                                <label for="zip" class="block text-xs font-bold uppercase tracking-wider text-steelGray mb-1">ZIP Code *</label>
+                                <input type="text" id="zip" required class="w-full bg-steelGray/5 border border-steelGray/20 rounded-xl px-4 py-3 text-deepBlue focus:outline-none focus:border-turquoise transition-colors" placeholder="77546">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="serviceType" class="block text-xs font-bold uppercase tracking-wider text-steelGray mb-1">Type of Service *</label>
+                            <select id="serviceType" required class="w-full bg-steelGray/5 border border-steelGray/20 rounded-xl px-4 py-3 text-deepBlue focus:outline-none focus:border-turquoise transition-colors">
+                                <option value="">Select service needed...</option>
+                                <option value="HVAC Repair">HVAC Troubleshooting & Repair</option>
+                                <option value="HVAC Maintenance">HVAC Maintenance / Tune-Up</option>
+                                <option value="HVAC Replacement">HVAC Installation / Replacement</option>
+                                <option value="Handyman Repair">General Handyman Repair</option>
+                                <option value="Fixture Update">Fixture or Hardware Update</option>
+                                <option value="Other">Other Home Maintenance</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="description" class="block text-xs font-bold uppercase tracking-wider text-steelGray mb-1">Description of Problem *</label>
+                            <textarea id="description" rows="4" required class="w-full bg-steelGray/5 border border-steelGray/20 rounded-xl px-4 py-3 text-deepBlue focus:outline-none focus:border-turquoise transition-colors" placeholder="Please explain the issue or service requested..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-turquoise hover:bg-turquoiseHover text-deepBlue font-extrabold py-4 rounded-xl shadow-md transition-all text-base hover:shadow-glow-turquoise transform hover:-translate-y-0.5">
+                            Submit Service Request
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deepBlueDark border-t border-white/10 text-warmWhite/70 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-4 justify-center md:justify-start">
+                <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/jj54/refs/heads/main/f33551e8-afd8-4bf3-bba4-d3c8512126e4.jpg" 
+                     alt="Little Bitz Logo" 
+                     class="w-12 h-12 shield-shape object-cover border border-white/20 bg-deepBlue" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/100x100/16364A/35B9C7?text=LB';">
+                <div>
+                    <span class="font-heading font-bold text-lg text-warmWhite block">Little Bitz Handyman & HVAC Services</span>
+                    <p class="text-xs text-warmWhite/60 mt-0.5">15810 Wandering Trail, Friendswood, TX 77546 · Phone: (832) 564-9368</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-6 text-sm font-semibold">
+                <a href="#home" class="hover:text-turquoise transition-colors">Home</a>
+                <a href="#about" class="hover:text-turquoise transition-colors">About</a>
+                <a href="#hvac" class="hover:text-turquoise transition-colors">HVAC</a>
+                <a href="#handyman" class="hover:text-turquoise transition-colors">Handyman</a>
+                <a href="#contact" class="hover:text-turquoise transition-colors">Contact</a>
+            </div>
+
+            <p class="text-xs text-warmWhite/50">© 2026 Little Bitz Handyman & HVAC Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Service Request Success Modal (Replaces built-in browser alerts) -->
+    <div id="successModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-deepBlue/80 backdrop-blur-md p-4">
+        <div class="bg-warmWhite text-deepBlue rounded-3xl max-w-md w-full p-8 shadow-2xl text-center border border-turquoise/40">
+            <div class="w-16 h-16 rounded-2xl bg-turquoise/20 text-turquoise flex items-center justify-center mx-auto mb-4 text-3xl font-bold">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="font-heading font-bold text-2xl mb-2">Request Submitted!</h3>
+            <p class="text-steelGray text-sm mb-6">Thank you for contacting Little Bitz Handyman & HVAC Services. We have received your information and will respond shortly.</p>
+            <button id="closeModalBtn" class="bg-deepBlue text-warmWhite hover:bg-turquoise hover:text-deepBlue font-extrabold px-6 py-3.5 rounded-xl w-full transition-all">
+                Close Confirmation
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Reveal on scroll observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+            // Mobile menu toggle logic
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // FAQ accordion script
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('i');
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+
+            // Interactive Estimator calculation script
+            let currentCalcType = 'hvac';
+            const calcButtons = document.querySelectorAll('.calc-type-btn');
+            const scopeRange = document.getElementById('scopeRange');
+            const scopeValueLabel = document.getElementById('scopeValueLabel');
+            const estimatedPrice = document.getElementById('estimatedPrice');
+
+            const scopeMap = {
+                1: { label: 'Standard Repair (~1-2 Hours)', hvac: '$95 - $185', handyman: '$75 - $140' },
+                2: { label: 'Moderate Diagnostics / Maintenance (~2-3 Hours)', hvac: '$180 - $310', handyman: '$135 - $220' },
+                3: { label: 'Complex System Tune-Up / Repair (~3+ Hours)', hvac: '$300 - $550+', handyman: '$210 - $400+' }
+            };
+
+            calcButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    calcButtons.forEach(b => {
+                        b.className = 'calc-type-btn bg-warmWhite/10 text-warmWhite font-bold p-4 rounded-2xl border border-warmWhite/20 flex items-center justify-between text-left hover:bg-warmWhite/20 transition-all';
+                    });
+                    btn.className = 'calc-type-btn bg-turquoise text-deepBlue font-bold p-4 rounded-2xl border border-turquoise flex items-center justify-between text-left transition-all';
+                    currentCalcType = btn.getAttribute('data-type');
+                    updateEstimator();
+                });
+            });
+
+            scopeRange.addEventListener('input', updateEstimator);
+
+            function updateEstimator() {
+                const val = scopeRange.value;
+                const data = scopeMap[val];
+                scopeValueLabel.textContent = data.label;
+                estimatedPrice.textContent = data[currentCalcType];
+            }
+
+            // Custom modal request submission
+            const serviceForm = document.getElementById('serviceForm');
+            const successModal = document.getElementById('successModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+
+            serviceForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                successModal.classList.remove('hidden');
+                serviceForm.reset();
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                successModal.classList.add('hidden');
+            });
+
+            successModal.addEventListener('click', (e) => {
+                if (e.target === successModal) {
+                    successModal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
